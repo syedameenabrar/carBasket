@@ -9,6 +9,7 @@ import { ValuationComponent } from './users/forms/valuation/valuation.component'
 import { UserHomeComponent } from './users/modules/user-home/user-home.component';
 import { AboutComponent } from './users/modules/about/about.component';
 import { ContactComponent } from './users/modules/contact/contact.component';
+import { ModulesModule } from './users/modules/modules.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactComponent } from './users/modules/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModulesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
