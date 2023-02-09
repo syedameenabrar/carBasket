@@ -27,9 +27,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/style.css",
+              "src/assets/css/navbar.css",
+
+              "src/assets/css/custom-animation.css",
+              "src/assets/css/framework.css",
+              "src/assets/css/responsive.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {
