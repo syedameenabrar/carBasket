@@ -11,6 +11,7 @@ import { AboutComponent } from './users/modules/about/about.component';
 import { ContactComponent } from './users/modules/contact/contact.component';
 import { ModulesModule } from './users/modules/modules.module';
 import { PreloaderComponent } from './users/common/preloader/preloader.component';
+import { FormsModule } from './users/forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PreloaderComponent } from './users/common/preloader/preloader.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModulesModule
+    ModulesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
