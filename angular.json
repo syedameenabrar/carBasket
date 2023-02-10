@@ -27,12 +27,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/style.css",
               "src/assets/css/navbar.css",
 
               "src/assets/css/custom-animation.css",
               "src/assets/css/framework.css",
-              "src/assets/css/responsive.css"
+              "src/assets/css/responsive.css",
+              "src/assets/css/style.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/fancybox/dist/jquery.fancybox.min.css",
+              "src/assets/vendor/slick/slick.css",
+              "src/assets/vendor/wow/animate.css",
+              "src/assets/vendor/nice-select/nice-select.css"
             ],
             "scripts": [
               "src/assets/js/theme.js"

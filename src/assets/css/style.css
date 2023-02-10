@@ -7,6 +7,21 @@
 @import url(../vendor/wow/animate.css);
 @import url(custom-animation.css);
 @import url(../vendor/nice-select/nice-select.css);
+
+/* @import url(../fonts/recoleta/stylesheet.css);
+@import url(../fonts/gordita/stylesheet.css);
+@import url(../fonts/eustache/stylesheet.css);
+@import url(../fonts/noteworthy/style.css);
+@import url(../vendor/bootstrap/css/bootstrap.min.css);
+@import url(navbar.css);
+@import url(framework.css);
+@import url(../fonts/bootstrap-icons/font-css.css);
+@import url(../fonts/font-awesome/css/all.min.css);
+@import url(../vendor/fancybox/dist/jquery.fancybox.min.css);
+@import url(../vendor/slick/slick.css);
+@import url(../vendor/wow/animate.css);
+@import url(custom-animation.css);
+@import url(../vendor/nice-select/nice-select.css); */
 #contact-form .form-group .help-block ul,
 .style-none {
     margin-bottom: 0
@@ -117,7 +132,7 @@ body .btn-seventeen:before {
     font-weight: 700;
     letter-spacing: 12px;
     display: inline-block;
-    color: rgb(255 50 148 / 20%);
+    color: #ffd338;
     position: relative;
     font-size: 35px;
     line-height: 30px
@@ -176,12 +191,7 @@ body .btn-seventeen:before {
     }
 }
 
-@media screen and (max-width:500px) {
-    .ctn-preloader .animation-preloader .txt-loading .letters-loading {
-        font-size: 40px;
-        letter-spacing: 10px
-    }
-}
+
 
 .main-page-wrapper {
     overflow-x: hidden
@@ -10905,4 +10915,16 @@ body .btn-twentySix:hover:after {
 
 .scrapNowBtn{
     margin-left: 25px;
+}
+
+
+
+@media screen and (max-width:500px) {
+    .ctn-preloader .animation-preloader .txt-loading .letters-loading {
+        font-size: 40px;
+        letter-spacing: 10px
+    }
+    .singleCard{
+        margin-top: 20px;
+    }
 }
