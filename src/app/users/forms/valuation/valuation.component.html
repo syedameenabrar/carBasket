@@ -52,7 +52,8 @@
     
                         <div class="col-xxl-11 m-auto">
                             <div class="form-style-four wow fadeInUp">
-                                <form action="" id="contact-form" data-toggle="validator">
+                        <form [formGroup]="postAddForm" (ngSubmit)="onSubmit()">
+
                                     <div class="messages"></div>
                                     <div class="input-bg-group position-relative controls">
                                         <div class="row">
@@ -60,7 +61,7 @@
                                                 <div class="d-block">
                                                     <div class="input-group-meta mb-50">
                                                         <label class="" for="">Name*</label>
-                                                        <input type="text" placeholder="Name" name="name" required="required" data-error="Name is required.">
+                                                        <input type="text" formControlName="Name" placeholder="Name" name="name" required="required" data-error="Name is required.">
                                                         <div class="help-block with-errors"></div>
                                                     </div>
                                                 </div>
@@ -69,7 +70,8 @@
                                                 <div class="d-block">
                                                     <div class="input-group-meta mb-50">
                                                         <label class="" for="">WhatsApp Number*</label>
-                                                        <input type="text" placeholder="WhatsApp Number" name="name" required="required" data-error="Name is required.">
+                                                        <input type="text" placeholder="WhatsApp Number" formControlName="PhoneNo"
+                                                        name="PhoneNo" required="required" data-error="Name is required.">
                                                         <div class="help-block with-errors"></div>
                                                     </div>
                                                 </div>
@@ -78,7 +80,8 @@
                                                 <div class="d-block">
                                                     <div class="input-group-meta mb-60">
                                                         <label class="" for="">Email*</label>
-                                                        <input type="email" placeholder="demo@domain.com" name="email" required="required" data-error="Valid email is required.">
+                                                        <input type="email" placeholder="demo@domain.com" formControlName="Email"
+                                                        name="Email" required="required" data-error="Valid email is required.">
                                                         <div class="help-block with-errors"></div>
                                                     </div>
                                                 </div>
