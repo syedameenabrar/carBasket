@@ -1,0 +1,140 @@
+        <!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+            <div class="inner-banner-three text-center p-30">
+                <div class="bg-wrapper text-center" style="background-image:url(images/assets/bg-17.svg);">
+                    <div class="container">
+                        <div class="title-style-five">
+                            <h2 class="main-title tx-dark fw-bold">Form Data</h2>
+                        </div>
+                        <p class="fs-20 mt-30 lg-mt-20">Get our all info and also can message us directly from here</p>
+                    </div>
+    
+                    <div class="container">
+                        <div class="contact-section-two text-start mt-80 lg-mt-60">
+                            <div class="row">
+                                <div class="col-lg-12 table-responsive">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-dark">
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">No.of attemps</th>
+                                            <th scope="col">Full Name</th>
+                                            <th scope="col">Phone No</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">F/W Type</th>
+                                            <th scope="col">Condition</th>
+                                            <th scope="col">Year</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Vehicle Images</th>
+                                            <th scope="col">RC Images</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody *ngFor="let abc of getList">
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>{{abc.fullName}}</td>
+                                            <td>{{abc.guestUserCount}}</td>
+                                            <td>{{abc.phoneNumber}}</td>
+                                            <td>{{abc.email}}</td>
+                                            <td>{{abc.location}}</td>
+                                            <td>{{abc.brandName}}</td>
+                                            <td>{{abc.modelName}}</td>
+                                            <td>{{abc.fuleWhellType}}</td>
+                                            <td>{{abc.condition}}</td>
+                                            <td>{{abc.manufactureYear}}</td>
+                                            <td>{{abc.description}}</td>
+                                            <td *ngFor="let klj of abc.vehiclePictures">{{klj.img}}</td>
+                                            <td *ngFor="let ghd of abc.rcPictures">{{ghd.img}}</td>
+
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    <!-- /.form-style-three -->
+                                </div>
+    
+                                
+                            </div>
+                        </div>
+                        <!-- /.contact-section-two -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.bg-wrapper -->
+            </div>
+            <!-- /.inner-banner-three -->
+    
+    
+    
+    
+    
+        <!--
+                =====================================================
+                    Footer
+                =====================================================
+                -->
+                <div class="footer-style-seven p-30 theme-basic-footer">
+                    <!-- <div class="bg-wrapper position-relative">
+                      <div class="container">
+                        <div class="row justify-content-between">
+                          <div class="col-xl-2 footer-intro mb-40">
+                            <div class="logo">
+                                <a
+                                class="d-block"
+                                style="font-weight: 700; font-size: larger"
+                                >CAR BASKET</a
+                              >
+                            </div>
+                          </div>
+                          <div class="col-lg-2 col-sm-4 mb-30">
+                            <h5 class="footer-title tx-dark fw-normal">Links</h5>
+                            <ul class="footer-nav-link style-none">
+                              <li><a>Home</a></li>
+                              <li><a href="pricing.html">Pricing</a></li>
+                              <li><a href="about-v1.html">About us</a></li>
+                              <li><a href="service-v1.html">Service</a></li>
+                              <li><a href="blog-v1.html">Blog</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-lg-2 col-sm-4 mb-30">
+                            <h5 class="footer-title tx-dark fw-normal">Support</h5>
+                            <ul class="footer-nav-link style-none">
+                              <li><a href="service-details.html">Item Support</a></li>
+                              <li><a href="service-details.html">Forum</a></li>
+                              <li><a href="service-details.html">Report Abuse</a></li>
+                              <li><a href="service-details.html">Live</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-xl-2 col-lg-3 col-sm-4 mb-30">
+                            <h5 class="footer-title tx-dark fw-normal">Products</h5>
+                            <ul class="footer-nav-link style-none">
+                              <li><a href="service-details.html">Web hosting</a></li>
+                              <li><a href="service-details.html">Cloud hosting</a></li>
+                              <li><a href="service-details.html">WordPress hosting</a></li>
+                              <li><a href="service-details.htmll">VPS hosting</a></li>
+                              <li><a href="service-details.html">Dedicated hosting</a></li>
+                            </ul>
+                          </div>
+                          <div class="col-xl-4 col-lg-5 mb-30 form-widget">
+                            <h5 class="footer-title tx-dark fw-normal">Newslettert</h5>
+                            <h6 class="pt-15 pb-20 md-pt-10">Join our newsletter</h6>
+                            <form action="#" class="position-relative">
+                              <input type="email" placeholder="Enter your email" />
+                              <button class="tran3s fw-500 position-absolute">
+                                Sign Up
+                              </button>
+                            </form>
+                            <div class="fs-14 mt-10">
+                              We only send interesting and relevant emails.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- /.bg-wrapper -->
+            

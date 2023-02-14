@@ -14,6 +14,7 @@ import { PreloaderComponent } from './users/common/preloader/preloader.component
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from './users/forms/forms.module';
+import { GetDataComponent } from './get-data/get-data.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from './users/forms/forms.module';
     UserHomeComponent,
     AboutComponent,
     ContactComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    GetDataComponent
   ],
   imports: [
     BrowserModule,

@@ -15,4 +15,8 @@ export class ApiService {
   postValuationForm(data:any) {
     return this.http.post(`https://zulukk-backend-dev.onrender.com/product/`,data)
   }
+
+  getValuationForm() {
+    return this.http.get(`https://zulukk-backend-dev.onrender.com/product/`)
+  }
 }
