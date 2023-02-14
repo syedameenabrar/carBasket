@@ -75,6 +75,7 @@
     margin: 0 26px;
     position: relative;
     transition: all 0.3s ease-in-out;
+    font-family: gordita;
 }
 
 .navbar .navbar-nav .nav-item.active .nav-link,

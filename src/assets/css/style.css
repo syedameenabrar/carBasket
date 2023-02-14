@@ -8,20 +8,20 @@
 @import url(custom-animation.css);
 @import url(../vendor/nice-select/nice-select.css); */
 
-@import url(../fonts/recoleta/stylesheet.css);
-@import url(../fonts/gordita/stylesheet.css);
-@import url(../fonts/eustache/stylesheet.css);
-@import url(../fonts/noteworthy/style.css);
-@import url(../vendor/bootstrap/css/bootstrap.min.css);
-@import url(navbar.css);
-@import url(framework.css);
-@import url(../fonts/bootstrap-icons/font-css.css);
-@import url(../fonts/font-awesome/css/all.min.css);
-@import url(../vendor/fancybox/dist/jquery.fancybox.min.css);
-@import url(../vendor/slick/slick.css);
-@import url(../vendor/wow/animate.css);
-@import url(custom-animation.css);
-@import url(../vendor/nice-select/nice-select.css);
+@import url(../../assets/fonts/recoleta/stylesheet.css);
+@import url(../../assets/fonts/gordita/stylesheet.css);
+@import url(../../assets/fonts/eustache/stylesheet.css);
+@import url(../../assets/fonts/noteworthy/style.css);
+@import url(../../assets/vendor/bootstrap/css/bootstrap.min.css);
+@import url(../../assets/css/navbar.css);
+@import url(../../assets/css/framework.css);
+@import url(../../assets/fonts/bootstrap-icons/font-css.css);
+@import url(../../assets/fonts/font-awesome/css/all.min.css);
+@import url(../../assets/vendor/fancybox/dist/jquery.fancybox.min.css);
+@import url(../../assets/vendor/slick/slick.css);
+@import url(../../assets/vendor/wow/animate.css);
+@import url(../../assets/css/custom-animation.css);
+@import url(../../assets/vendor/nice-select/nice-select.css);
 #contact-form .form-group .help-block ul,
 .style-none {
     margin-bottom: 0
@@ -995,7 +995,9 @@ body .btn-fourteen {
     font-size: 18px;
     color: #000;
     padding: 0 30px;
-    position: relative
+    position: relative;
+    font-family: gordita;
+    text-decoration: none!important;
 }
 
 body .btn-seventeen,
@@ -1349,6 +1351,13 @@ body .btn-twentySix:hover:after {
     display: flex;
     align-items: center
 }
+.theme-main-menu .logo a{
+color: black;
+font-weight: 700;
+font-size: 24px;
+font-family: gordita;
+text-decoration: none;
+}
 
 .theme-main-menu .contact-btn-one {
     line-height: 52px;
@@ -1642,7 +1651,9 @@ body .btn-twentySix:hover:after {
     line-height: 52px;
     border: 2px solid #363636;
     padding: 0 36px;
-    color: #000
+    color: #000;
+    font-family: gordita;
+    text-decoration: none;
 }
 
 .theme-main-menu .start-btn-one:before {
@@ -5692,10 +5703,7 @@ body .btn-twentySix:hover:after {
     padding: 25px 0
 }
 
-.hero-banner-seven .bg-wrapper {
-    background: url(/assets/images/shape/shape_94.svg) center bottom/cover no-repeat;
-    z-index: 5
-}
+
 
 .hero-banner-seven .slogan {
     line-height: initial;
@@ -5726,9 +5734,16 @@ body .btn-twentySix:hover:after {
 
 .hero-banner-seven .hero-heading {
     line-height: 1.25em;
-    letter-spacing: -3px
+    letter-spacing: -3px;
+    font-size: 65px;
+    font-family: gordita;
 }
-
+.pTag{
+    font-size: 16px;
+    color: #48494e;
+    font-weight: 400;
+    font-family: gordita;
+}
 .hero-banner-seven .hero-heading span img {
     position: absolute;
     left: 50%;
