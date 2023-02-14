@@ -618,7 +618,8 @@ body .btn-two {
 .title-style-seven .main-title {
     font-size: 68px;
     line-height: 1.35em;
-    letter-spacing: -2px
+    letter-spacing: -2px;
+    font-family: gordita;
 }
 
 .title-style-seven .main-title span img {
