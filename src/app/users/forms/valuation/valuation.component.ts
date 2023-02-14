@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { ObservableService } from 'src/app/services/observable.service';
 
 @Component({
   selector: 'app-valuation',
@@ -18,6 +19,7 @@ export class ValuationComponent implements OnInit {
   postAddForm: FormGroup = new FormGroup({});
 
   image: any;
+  imageRc: any;
   showBrands:any[]=[];
   showModels:any[]=[];
   showType:any[]=[];
@@ -27,6 +29,8 @@ export class ValuationComponent implements OnInit {
   selectedType:any="";
   showPrice:any="";
   beforeSubmit:boolean=true;
+  showLoader:boolean= false;
+
 
    bikesBrands = ['Yamaha', 'Royal_Enfield', "Suzuki", "Mahendra", 'TVS', 'Bajaj','Honda', 'Hero'];
    carsBrands = ['Ford', 'Nissan', 'Volkswagen','Chevrolet', 'Toyota','Honda', 'Hyundai', 'Mahindra', 'Tata',  'Renault', 'Ambassador', 'Mercedes', 'BMW', 'Datsun', 'Land_Rover', 'Bajaj','Maruti', 'Skoda', 'Fiat', 'Mitsubishi', 'Opel' ];
@@ -75,23 +79,27 @@ export class ValuationComponent implements OnInit {
   cityList = ['Bangalore', 'Delhi', "Kolkata", "Indore", "Bombay", "Bangladesh", "Chennai" ];
 
 
-  constructor(private fb: FormBuilder, private api:ApiService) { 
+  constructor(private fb: FormBuilder, private api:ApiService, private fetch:ObservableService) { 
     this.postAddForm = this.fb.group({
-      Email: ['', [Validators.required]],
-      VehicleType: ['', [Validators.required]],
+        email: ['', [Validators.required]],
+        vehicleType: ['', [Validators.required]],
       description: [''],
-      Condition: ['', [Validators.required]],
-      City: ['', [Validators.required]],
-      Name: ['', [Validators.required]],
-      PhoneNo: ['', [Validators.required]],
-      Brand: ['', [Validators.required]],
-      Model: [''],
-      Our_Price: [''],
-      Fule_Wheel_Type: [''],
-      year: ['', [Validators.required]],
-      carPictures: this.fb.array([this.newImage()]),
+      condition: ['', [Validators.required]],
+      location: ['', [Validators.required]],
+      fullName: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
+      brandName: ['', [Validators.required]],
+      modelName: [''],
+      fuleWhellType: [''],
+      manufactureYear: ['', [Validators.required]],
+      vehiclePictures: this.fb.array([this.newImage()]),
       rcPictures: this.fb.array([this.secondImage()]),
     });
+
+    this.fetch.getDataSubject.subscribe((res: any) => {
+      console.log("in single page", res );
+  
+      });
   }
 
   get f() {
@@ -120,7 +128,7 @@ export class ValuationComponent implements OnInit {
   }
 
   get abc(): FormArray {
-    return this.postAddForm.get('carPictures') as FormArray;
+    return this.postAddForm.get('vehiclePictures') as FormArray;
   }
 
   get def(): FormArray {
@@ -1639,6 +1647,36 @@ export class ValuationComponent implements OnInit {
     this.readThiss($event.target, i);
   }
 
+  changeListenersRc($event: any, i: any): void {
+    this.rcReadThis($event.target, i);
+  }
+
+  rcReadThis(inputValue: any, i: any): void {
+    var file: File = inputValue.files[0];
+    var myReader: FileReader = new FileReader();
+
+
+    myReader.onloadend = (e) => {
+      console.log(e.currentTarget);
+      this.imageRc = myReader.result;
+      console.log(typeof myReader.result, '2');
+
+      let a: any = this.postAddForm.controls['rcPictures'];
+      console.log(
+        "this.addCarForm.controls['rcPictures']",
+        a['controls'][i].value
+      );
+      a['controls'][i].patchValue({
+        img: myReader.result,
+      });
+
+      console.log(
+        "this.addCarForm.controls['rcPictures']",
+        a['controls'][i].value
+      );
+    };
+    myReader.readAsDataURL(file);
+  }
   readThiss(inputValue: any, i: any): void {
     var file: File = inputValue.files[0];
     var myReader: FileReader = new FileReader();
@@ -1649,9 +1687,9 @@ export class ValuationComponent implements OnInit {
       this.image = myReader.result;
       console.log(typeof myReader.result, '2');
 
-      let a: any = this.postAddForm.controls['carPictures'];
+      let a: any = this.postAddForm.controls['vehiclePictures'];
       console.log(
-        "this.addCarForm.controls['carPictures']",
+        "this.addCarForm.controls['vehiclePictures']",
         a['controls'][i].value
       );
       a['controls'][i].patchValue({
@@ -1659,7 +1697,7 @@ export class ValuationComponent implements OnInit {
       });
 
       console.log(
-        "this.addCarForm.controls['carPictures']",
+        "this.addCarForm.controls['vehiclePictures']",
         a['controls'][i].value
       );
     };
@@ -1902,29 +1940,24 @@ this.showType = this.wheelType;
      const data = this.postAddForm.value;
      data.Our_Price = this.showPrice;
     console.log('data', data);
+    this.showLoader = true;
 
-    this.api.postVehicle(data).subscribe((res:any) => {
+    this.api.postValuationForm(data).subscribe((res:any) => {
       console.log(res);
-      if(res){
+      if(res.message == "Successfully Product Create!"){
+        this.beforeSubmit = false;
         alert("Data Submitted Successfully")
-      //   this.postAddForm.reset({
-      //     VehicleType: [''],
-      // description: [''],
-      // Condition: [''],
-      // City: [''],
-      // Brand: [''],
-      // Model: [''],
-      // Fule_Wheel_Type: [''],
-      // year: [''],
-      //   })
+      
       this.showVehiclePrice();
-      this.beforeSubmit = false;
+      
       // window.location.reload();
       }else{
         alert("Something went wrong, try again")
       }
 
     })
+
+    this.showLoader = false;
 
 
 
