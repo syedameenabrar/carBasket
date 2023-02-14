@@ -48,51 +48,19 @@
 
               "src/assets/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/vendor/bootstrap/css/dist/css/bootstrap.css",
-              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
 
-              "src/assets/vendor/fancybox/dist/jquery.fancybox.min.css",
              
 
 
 
               "src/assets/vendor/fancybox/dist/jquery.fancybox.min.css",
               "src/assets/vendor/slick/slick.css",
-              "src/assets/vendor/nice-select/nice-select.css",
-              "src/assets/vendor/wow/animate.css",
-              "src/assets/vendor/slick/slick.css",
               "src/assets/vendor/wow/animate.css"
 
 
             ],
             "scripts": [
-              "src/assets/vendor/jquery.min.js",
-              "src/assets/vendor/nice-select/jquery.nice-select.min.js",
-              "src/assets/vendor/fancybox/dist/jquery.fancybox.min.js",
-
-
-              "src/assets/js/theme.js",
-              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/vendor/js/index.umd.js",
-              "src/assets/vendor/js/src/alert.js",
-              "src/assets/vendor/js/src/base-component.js",
-              "src/assets/vendor/js/src/button.js",
-              "src/assets/vendor/js/src/carousel.js",
-              "src/assets/vendor/js/src/collapse.js",
-              "src/assets/vendor/js/src/dropdown.js",
-              "src/assets/vendor/js/src/modal.js",
-              "src/assets/vendor/js/src/offcanvas.js",
-              "src/assets/vendor/js/src/popover.js",
-              "src/assets/vendor/js/src/scrollspy.js",
-              "src/assets/vendor/js/src/tab.js",
-              "src/assets/vendor/js/src/toast.js",
-              "src/assets/vendor/js/src/toast.js",
-              "src/assets/vendor/js/src/tooltip.js",
-              "src/assets/vendor/slick/slick.min.js",
-              "src/assets/vendor/wow/wow.min.js",
-              "src/assets/vendor/jquery.counterup.min.js",
-              "src/assets/vendor/jquery.lazy.min.js",
-              "src/assets/vendor/jquery.waypoints.min.js",
-              "src/assets/vendor/validator.js"
+              
             ]
           },
           "configurations": {
