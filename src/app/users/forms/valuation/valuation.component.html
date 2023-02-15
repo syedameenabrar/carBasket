@@ -1,334 +1,418 @@
 <app-preloader *ngIf="showLoader"></app-preloader>
- 
- <!-- 
+
+<!-- 
 			=============================================
 				Contact Section Three
 			============================================== 
 			-->
-            <div class="contact-section-three p-30">
-                <div class="address-wrapper zn2 position-relative pt-180 lg-pt-150 mb-150 lg-mb-80">
-                    <div class="container">
-                        <div class="title-style-seven text-center wow fadeInUp">
-                            <h2 class="main-title fw-bold tx-dark">Get Exact <span class="position-relative d-inline-block">Valuation  <img src="../../../../assets/images/shape/shape_96.svg" alt=""></span></h2>
-                        </div>
-                        <!-- /.title-style-seven -->
-                        <div class="row">
-                            <div class="col-xxl-6 col-xl-7 m-auto">
-                                <p class="mt-45 lg-mt-20 mb-70 lg-mb-30 fs-20 lh-lg text-center wow fadeInUp">Want to get in touch? We’d love to hear from you. Here’s how you can reach us. </p>
-                            </div>
-                        </div>
-    
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5 col-md-6">
-                                <div class="address-block-four text-center me-xxl-4 ms-xxl-4 mt-30 wow fadeInUp">
-                                    <div class="icon d-flex align-items-end justify-content-center"><img src="../../../../assets/images/icon/icon_173.svg" alt="" class="mh-100"></div>
-                                    <div class="text">
-                                        <h5 class="title tx-dark mt-25 mb-10">Talk to us</h5>
-                                        <p class="fs-18 mb-35">Want to talk to a real human? Please <br> ask our team.</p>
-                                        <a href="tel:+8903331448" class="btn-twentySix fs-18 fw-500 tran3s position-relative">Contact us</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6">
-                                <div class="address-block-four text-center me-xxl-4 ms-xxl-4 mt-30 wow fadeInUp">
-                                    <div class="icon d-flex align-items-end justify-content-center"><img src="../../../../assets/images/icon/icon_174.svg" alt="" class="mh-100"></div>
-                                    <div class="text">
-                                        <h5 class="title tx-dark mt-25 mb-10">Knowledge Base</h5>
-                                        <p class="fs-18 mb-35">For Immidiate answer from our <br> community.</p>
-                                        <a  class="btn-twentySix fs-18 fw-500 tran3s position-relative">Chat with us</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="contact-section-three p-30">
+  <div
+    class="address-wrapper zn2 position-relative pt-180 lg-pt-150 mb-150 lg-mb-80"
+  >
+    <div class="container">
+      <div class="title-style-seven text-center wow fadeInUp">
+        <h2 class="main-title fw-bold tx-dark">
+          Get Exact
+          <span class="position-relative d-inline-block"
+            >Valuation
+            <img src="../../../../assets/images/shape/shape_96.svg" alt=""
+          /></span>
+        </h2>
+      </div>
+      <!-- /.title-style-seven -->
+      <div class="row">
+        <div class="col-xxl-6 col-xl-7 m-auto">
+          <p
+            class="mt-45 lg-mt-20 mb-70 lg-mb-30 fs-20 lh-lg text-center wow fadeInUp"
+          >
+            Want to get in touch? We’d love to hear from you. Here’s how you can
+            reach us.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6">
+          <div
+            class="address-block-four text-center me-xxl-4 ms-xxl-4 mt-30 wow fadeInUp"
+          >
+            <div class="icon d-flex align-items-end justify-content-center">
+              <img
+                src="../../../../assets/images/icon/icon_173.svg"
+                alt=""
+                class="mh-100"
+              />
+            </div>
+            <div class="text">
+              <h5 class="title tx-dark mt-25 mb-10">Talk to us</h5>
+              <p class="fs-18 mb-35">
+                Want to talk to a real human? Please <br />
+                ask our team.
+              </p>
+              <a
+                href="tel:+8903331448"
+                class="btn-twentySix fs-18 fw-500 tran3s position-relative"
+                >Contact us</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+          <div
+            class="address-block-four text-center me-xxl-4 ms-xxl-4 mt-30 wow fadeInUp"
+          >
+            <div class="icon d-flex align-items-end justify-content-center">
+              <img
+                src="../../../../assets/images/icon/icon_174.svg"
+                alt=""
+                class="mh-100"
+              />
+            </div>
+            <div class="text">
+              <h5 class="title tx-dark mt-25 mb-10">Knowledge Base</h5>
+              <p class="fs-18 mb-35">
+                For Immidiate answer from our <br />
+                community.
+              </p>
+              <a class="btn-twentySix fs-18 fw-500 tran3s position-relative"
+                >Chat with us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.address-wrapper -->
+
+  <div class="container">
+    <ng-container *ngIf="beforeSubmit; else showPricePage">
+      <div class="row">
+        <div class="col-lg-6 m-auto">
+          <div
+            class="title-style-one enter-details text-center mb-60 lg-mb-40 wow fadeInUp"
+          >
+            <h2 class="main-title fw-500 tx-dark m0">
+              Enter details below and get valuation
+            </h2>
+          </div>
+        </div>
+
+        <div class="col-xxl-11 m-auto">
+          <div class="form-style-four wow fadeInUp">
+            <form [formGroup]="postAddForm" (ngSubmit)="onSubmit()">
+              <div class="messages"></div>
+              <div class="input-bg-group position-relative controls">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-50">
+                        <label class="" for="">Name*</label>
+                        <input
+                          type="text"
+                          formControlName="fullName"
+                          placeholder="Full Name"
+                          name="fullName"
+                          required="required"
+                          data-error="Name is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
                     </div>
-                </div>
-                <!-- /.address-wrapper -->
-    
-                <div class="container">
-                    <ng-container  *ngIf="beforeSubmit else showPricePage">
-                        <div class="row">
-                            <div class="col-lg-6 m-auto">
-                                <div class="title-style-one enter-details text-center mb-60 lg-mb-40 wow fadeInUp">
-                                    <h2 class="main-title fw-500 tx-dark m0">Enter details below and get valuation</h2>
-                                </div>
-                            </div>
-        
-                            <div class="col-xxl-11 m-auto">
-                                <div class="form-style-four wow fadeInUp">
-                            <form [formGroup]="postAddForm" (ngSubmit)="onSubmit()">
-    
-                                        <div class="messages"></div>
-                                        <div class="input-bg-group position-relative controls">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-50">
-                                                            <label class="" for="">Name*</label>
-                                                            <input type="text" formControlName="fullName" placeholder="Full Name" name="fullName" required="required" data-error="Name is required.">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-50">
-                                                            <label class="" for="">WhatsApp Number*</label>
-                                                            <input type="text" placeholder="WhatsApp Number" formControlName="phoneNumber"
-                                                            name="phoneNumber" required="required" data-error="Name is required.">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for="">Email*</label>
-                                                            <input type="email" placeholder="demo@domain.com" formControlName="email"
-                                                            name="email" required="required" data-error="Valid email is required.">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for="">Category*</label>
-                                                    
-                                                    <select class="nice-select mt-2"
-                                            name="vehicleType"
-                                            formControlName="vehicleType"
-                                            required
-                                            (change)="categorySelected($event.target)"
-                                          >
-                                            <option  disabled selected value="">Category</option>
-                                            <option value="Bike">Two Wheeler</option>
-                                            <option value="Tractor">Tractor</option>
-                                            <option value="JCB">JCB</option>
-                                            <option value="Car">Car</option>
-                                            <option value="Goods_Vehicle">Goods_Vehicle</option>
-                                          </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for="">Brand*</label>
-                                                            <select class="nice-select mt-2"
-                                                            name="brandName"
-                                                            formControlName="brandName"
-                                                            required
-                                                            (change)="brandSelected($event.target)"
-                                                          >
-                                                            <option disabled selected value="">Brand</option>
-                                                            <option *ngFor="let b of showBrands" [value]="b">
-                                                              {{ b }}
-                                                            </option>
-                                                          </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for="">Model*</label>
-                                                            <select class="nice-select mt-2"
-                                                            name="modelName"
-                                                            formControlName="modelName"
-                                                            required
-                                                            (change)="modelSelected($event.target)"
-                                                          >
-                                                            <option disabled selected value="">Model</option>
-                                                            <option *ngFor="let m of showModels" [value]="m">
-                                                              {{ m }}
-                                                            </option>
-                                                          </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for="">Fuel/Wheel Type*</label>
-                                                            <select class="nice-select mt-2"
-                                                            required
-                                                            name="fuleWhellType"
-                                                            formControlName="fuleWhellType"
-                                                            (change)="typeSelected($event.target)"
-                                                          >
-                                                            <option disabled selected value="">
-                                                              Fuel/Wheel Type
-                                                            </option>
-                                                            <option *ngFor="let f of showType" [value]="f">
-                                                              {{ f }}
-                                                            </option>
-                                                          </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for=""> Make Year *</label>
-                                                            <select class="nice-select mt-2" required name="manufactureYear" formControlName="manufactureYear">
-                                                                <option disabled selected value="">
-                                                                  Manufacturing Year
-                                                                </option>
-                                                                <option *ngFor="let y of yearData" [value]="y">
-                                                                  {{ y }}
-                                                                </option>
-                                                              </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for=""> Condition *</label>
-                                                            <select class="nice-select mt-2" required name="condition" formControlName="condition">
-                                                                <option disabled selected value="">Condition</option>
-                                                                <option *ngFor="let c of ConditionList" [value]="c">
-                                                                  {{ c }}
-                                                                </option>
-                                                              </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-6">
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta mb-60">
-                                                            <label class="" for=""> City *</label>
-                                                            <select class="nice-select mt-2" required name="location" formControlName="location">
-                                                                <option disabled selected value="">City</option>
-                                                                <option *ngFor="let ci of cityList" [value]="ci">
-                                                                  {{ ci }}
-                                                                </option>
-                                                              </select>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                <div class="col-12">
-                                                    
-                                                    <div class="d-block">
-                                                        <div class="input-group-meta form-group">
-                                                            <textarea placeholder="Your message*" formControlName="description" placeholder="Message" name="description" required="required" data-error="Please,leave us a message."></textarea>
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="single-form">
-                                                    <label class="add-vehicle"
-                                                      >Vehicle Images (x4)
-                                                      <button
-                                                        class="btn btn-primary"
-                                                        type="button"
-                                                        (click)="addImg()"
-                                                      >
-                                                        Add
-                                                      </button></label
-                                                    >
-                                                    <ng-container class="ng-forms"
-                                                      formArrayName="vehiclePictures"
-                                                      *ngFor="let item of abc.controls; let i = index"
-                                                    >
-                                                      <div [formGroupName]="i">
-                                                       
-                                                          <div class="ads-file">
-                                                            <input
-                                                              type="file"
-                                                              id="File_1+{{ i }}"
-                                                              class="input-file"
-                                                              (change)="changeListeners($event, i)"
-                                                            />
-                                                            <label for="File_1+{{ i }}" class="js-labelFile">
-                                                              <i class="fa fa-upload"></i>
-                                                              <p class="js-fileName">Click here to upload</p>
-                                                              <img src="assets/images/media/img_01.jpg">
-                                                              <!-- <input class="input-psswd form-control" name="vehiclePictures" multiple formControlName="imgName" type="file" placeholder=""> -->
-                                                            </label>
-                                                          </div>
-                                                        
-                                                      </div>
-                                                    </ng-container>
-                                                    <!-- <div class="d-flex">
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-50">
+                        <label class="" for="">WhatsApp Number*</label>
+                        <input
+                          type="text"
+                          placeholder="WhatsApp Number"
+                          formControlName="phoneNumber"
+                          name="phoneNumber"
+                          required="required"
+                          data-error="Name is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for="">Email*</label>
+                        <input
+                          type="email"
+                          placeholder="demo@domain.com"
+                          formControlName="email"
+                          name="email"
+                          required="required"
+                          data-error="Valid email is required."
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for="">Category*</label>
+
+                        <select
+                          class="nice-select mt-2"
+                          name="vehicleType"
+                          formControlName="vehicleType"
+                          required
+                          (change)="categorySelected($event.target)"
+                        >
+                          <option disabled selected value="">Category</option>
+                          <option value="Bike">Two Wheeler</option>
+                          <option value="Tractor">Tractor</option>
+                          <option value="JCB">JCB</option>
+                          <option value="Car">Car</option>
+                          <option value="Goods_Vehicle">Goods_Vehicle</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for="">Brand*</label>
+                        <select
+                          class="nice-select mt-2"
+                          name="brandName"
+                          formControlName="brandName"
+                          required
+                          (change)="brandSelected($event.target)"
+                        >
+                          <option disabled selected value="">Brand</option>
+                          <option *ngFor="let b of showBrands" [value]="b">
+                            {{ b }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for="">Model*</label>
+                        <select
+                          class="nice-select mt-2"
+                          name="modelName"
+                          formControlName="modelName"
+                          required
+                          (change)="modelSelected($event.target)"
+                        >
+                          <option disabled selected value="">Model</option>
+                          <option *ngFor="let m of showModels" [value]="m">
+                            {{ m }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for="">Fuel/Wheel Type*</label>
+                        <select
+                          class="nice-select mt-2"
+                          required
+                          name="fuleWhellType"
+                          formControlName="fuleWhellType"
+                          (change)="typeSelected($event.target)"
+                        >
+                          <option disabled selected value="">
+                            Fuel/Wheel Type
+                          </option>
+                          <option *ngFor="let f of showType" [value]="f">
+                            {{ f }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for=""> Make Year *</label>
+                        <select
+                          class="nice-select mt-2"
+                          required
+                          name="manufactureYear"
+                          formControlName="manufactureYear"
+                        >
+                          <option disabled selected value="">
+                            Manufacturing Year
+                          </option>
+                          <option *ngFor="let y of yearData" [value]="y">
+                            {{ y }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for=""> Condition *</label>
+                        <select
+                          class="nice-select mt-2"
+                          required
+                          name="condition"
+                          formControlName="condition"
+                        >
+                          <option disabled selected value="">Condition</option>
+                          <option *ngFor="let c of ConditionList" [value]="c">
+                            {{ c }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-block">
+                      <div class="input-group-meta mb-60">
+                        <label class="" for=""> City *</label>
+                        <select
+                          class="nice-select mt-2"
+                          required
+                          name="location"
+                          formControlName="location"
+                        >
+                          <option disabled selected value="">City</option>
+                          <option *ngFor="let ci of cityList" [value]="ci">
+                            {{ ci }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-block">
+                      <div class="input-group-meta form-group">
+                        <textarea
+                          placeholder="Your message*"
+                          formControlName="description"
+                          placeholder="Message"
+                          name="description"
+                          required="required"
+                          data-error="Please,leave us a message."
+                        ></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="single-form">
+                    <label class="add-vehicle"
+                      >Vehicle Images (x4)
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                        (click)="addImg()"
+                      >
+                        Add
+                      </button></label
+                    >
+                    <ng-container
+                      class="ng-forms"
+                      formArrayName="vehiclePictures"
+                      *ngFor="let item of abc.controls; let i = index"
+                    >
+                      <div [formGroupName]="i">
+                        <div class="ads-file">
+                          <input
+                            type="file"
+                            id="File_1+{{ i }}"
+                            class="input-file"
+                            (change)="changeListeners($event, i)"
+                          />
+                          <label for="File_1+{{ i }}" class="js-labelFile">
+                            <i class="fa fa-upload"></i>
+                            <p class="js-fileName">Click here to upload</p>
+                            <img src="assets/images/media/img_01.jpg" />
+                            <!-- <input class="input-psswd form-control" name="vehiclePictures" multiple formControlName="imgName" type="file" placeholder=""> -->
+                          </label>
+                        </div>
+                      </div>
+                    </ng-container>
+                    <!-- <div class="d-flex">
                                                                         <button class="btn btn-primary w-100" type="button" (click)="addImg()">Add</button>
                                     
                                                                     </div> -->
-                                                  </div>
-                                                  <div class="single-form">
-                                                    <label class="add-vehicle"
-                                                      >RC Images (x3) (For Verification)
-                                                      <button
-                                                        class="btn btn-secondary"
-                                                        type="button"
-                                                        (click)="addSecondImg()"
-                                                      >
-                                                        Add
-                                                      </button></label
-                                                    >
-                                                    <ng-container
-                                                      formArrayName="rcPictures"
-                                                      *ngFor="let item of def.controls; let i = index"
-                                                    >
-                                                      <div [formGroupName]="i">
-                                                        
-                                                         
-                                                            <div class="ads-file">
-                                                              <input
-                                                                type="file"
-                                                                id="File_1+{{ i }}"
-                                                                class="input-file"
-                                                                (change)="changeListenersRc($event, i)"
-                                                              />
-                                                              <label for="File_1+{{ i }}" class="js-labelFile">
-                                                                <i class="fa fa-upload"></i>
-                                                                <p class="js-fileName">Click here to upload</p>
-                                                                <img src="assets/images/media/img_01.jpg">
-                                                                <!-- <input class="input-psswd form-control" name="carPvehiclePicturesictures" multiple formControlName="imgName" type="file" placeholder=""> -->
-                                                              </label>
-                                                            </div>
-                                                          
-                                                        
-                                                      </div>
-                                                    </ng-container>
-                                                    <!-- <div class="d-flex">
+                  </div>
+                  <div class="single-form">
+                    <label class="add-vehicle"
+                      >RC Images (x3) (For Verification)
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                        (click)="addSecondImg()"
+                      >
+                        Add
+                      </button></label
+                    >
+                    <ng-container
+                      formArrayName="rcPictures"
+                      *ngFor="let item of def.controls; let i = index"
+                    >
+                      <div [formGroupName]="i">
+                        <div class="ads-file">
+                          <input
+                            type="file"
+                            id="File_1+{{ i }}"
+                            class="input-file"
+                            (change)="changeListenersRc($event, i)"
+                          />
+                          <label for="File_1+{{ i }}" class="js-labelFile">
+                            <i class="fa fa-upload"></i>
+                            <p class="js-fileName">Click here to upload</p>
+                            <img src="assets/images/media/img_01.jpg" />
+                            <!-- <input class="input-psswd form-control" name="carPvehiclePicturesictures" multiple formControlName="imgName" type="file" placeholder=""> -->
+                          </label>
+                        </div>
+                      </div>
+                    </ng-container>
+                    <!-- <div class="d-flex">
                                                                         <button class="btn btn-secondary w-100" type="button" (click)="addSecondImg()">Add</button>
                                     
                                                                     </div> -->
-                                                  </div>
-                                            </div>
-                                        </div>
-                                        <!-- /.input-bg-group -->
-                                        <button class="btn-one fw-500 w-100 fs-18 d-block mt-45">Submit</button>
-                                    </form>
-                                </div>
-                                <!-- /.form-style-four -->
-                            </div>
-                        </div>
-                    </ng-container>
-                    <ng-template #showPricePage>
-                        <div class="row">
-                            <div class="col-lg-6 m-auto">
-                                <div class="title-style-one text-center mb-60 lg-mb-40 wow fadeInUp">
-                                    <h2 class="main-title fw-500 tx-dark m0">The valuation price of your vehicle is : {{showPrice}}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </div> 
-            </div>
-            <!-- /.contact-section-three -->
-    
-    
-    
-    
-            <!--
+                  </div>
+                </div>
+              </div>
+              <!-- /.input-bg-group -->
+              <button class="btn-one fw-500 w-100 fs-18 d-block mt-45">
+                Submit
+              </button>
+            </form>
+          </div>
+          <!-- /.form-style-four -->
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #showPricePage>
+      <div class="row">
+        <div class="col-lg-6 m-auto">
+          <div class="title-style-one text-center mb-60 lg-mb-40 wow fadeInUp">
+            <h2 class="main-title fw-500 tx-dark m0">
+              The valuation price of your vehicle is : {{ showPrice }}
+            </h2>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<!-- /.contact-section-three -->
+
+<!--
                 =====================================================
                     Fancy Short Banner Ten
                 =====================================================
                 -->
-            <!-- <div class="fancy-short-banner-ten position-relative mt-160 lg-mt-100 wow fadeInUp">
+<!-- <div class="fancy-short-banner-ten position-relative mt-160 lg-mt-100 wow fadeInUp">
                 <div class="container">
                     <div class="bg-wrapper position-relative pt-50 pb-65 lg-pt-40 lg-pb-50">
                         <div class="row">
@@ -349,5 +433,4 @@
                     </div>
                 </div>
             </div> -->
-            <!-- /.fancy-short-banner-ten -->
-
+<!-- /.fancy-short-banner-ten -->
