@@ -329,7 +329,8 @@ body .btn-eighteen i {
 .fs-20,
 .portfolio-details-two .project-desctiption p,
 .theme-basic-footer .form-widget h6 {
-    font-size: 20px
+    font-size: 20px;
+    font-family: gordita;
 }
 
 .fw-500 {
@@ -452,6 +453,10 @@ body .btn-two {
     display: inline-block;
     position: relative;
     z-index: 1
+}
+.title-style-one h2{
+    font-size: 54px;
+    font-family: gordita;
 }
 
 .title-style-one .main-title span:before {
@@ -1241,7 +1246,9 @@ body .btn-twentySix {
     line-height: 48px;
     padding: 0 40px;
     color: #000;
-    z-index: 1
+    z-index: 1;
+    font-family: gordita;
+    text-decoration: none!important;
 }
 
 body .btn-twentySix:before {
@@ -5359,7 +5366,8 @@ text-decoration: none;
 .address-block-four h5,
 .fancy-feature-twentyOne .block h4,
 .fancy-short-banner-eight .call-btn a {
-    font-size: 26px
+    font-size: 26px;
+    font-family: gordita;
 }
 
 .fancy-feature-twentyOne .shape-one {
@@ -10754,7 +10762,8 @@ text-decoration: none;
 
 .address-block-four p {
     line-height: 32px;
-    color: #878787
+    color: #878787;
+    font-family: gordita;
 }
 
 .form-style-four .input-bg-group {
@@ -10777,7 +10786,8 @@ text-decoration: none;
 
 .form-style-four .input-group-meta label {
     font-size: 15px;
-    color: rgba(0, 0, 0, .5)
+    color: rgba(0, 0, 0, .5);
+    font-family: gordita;
 }
 
 .form-style-four .input-group-meta input {
@@ -10787,7 +10797,8 @@ text-decoration: none;
     border-bottom: 2px solid #000;
     padding: 0 0 11px;
     color: #000;
-    font-size: 17px
+    font-size: 17px;
+    font-family: gordita;
 }
 
 .form-style-four .input-group-meta textarea {
@@ -10798,19 +10809,50 @@ text-decoration: none;
     border-bottom: 2px solid #000;
     padding: 0;
     color: #000;
-    font-size: 17px
+    font-size: 17px;
+    font-family: gordita;
 }
 
 .form-style-four ::-webkit-input-placeholder {
-    color: #000
+    color: #000;
+    font-family: gordita;
 }
 
 .form-style-four :-ms-input-placeholder {
-    color: #000
+    color: #000;
+    font-family: gordita;
+}
+.nice-select{
+    width: 100%!important;
+}
+.nice-select option{
+padding: 20px 0;
+height: 42px!important;
+
 }
 
 .form-style-four ::placeholder {
     color: #000
+}
+.js-labelFile{
+    display: flex;
+    align-items: center;
+    margin-top: -30px;
+    margin-bottom: 7px;
+    background: white;
+    border-radius: 5px;
+    border: solid 1px #e8e8e8;
+    padding: 5px 15px;
+    justify-content: space-between;
+}
+.js-labelFile i{
+    padding-right: 10px;
+}
+.js-labelFile p{
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black;
+    line-height: 17px;
 }
 
 .form-style-four .btn-one {

@@ -48,7 +48,7 @@
                     <ng-container  *ngIf="beforeSubmit else showPricePage">
                         <div class="row">
                             <div class="col-lg-6 m-auto">
-                                <div class="title-style-one text-center mb-60 lg-mb-40 wow fadeInUp">
+                                <div class="title-style-one enter-details text-center mb-60 lg-mb-40 wow fadeInUp">
                                     <h2 class="main-title fw-500 tx-dark m0">Enter details below and get valuation</h2>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                                                 </div>
     
                                                 <div class="single-form">
-                                                    <label
+                                                    <label class="add-vehicle"
                                                       >Vehicle Images (x4)
                                                       <button
                                                         class="btn btn-primary"
@@ -228,12 +228,12 @@
                                                         Add
                                                       </button></label
                                                     >
-                                                    <ng-container
+                                                    <ng-container class="ng-forms"
                                                       formArrayName="vehiclePictures"
                                                       *ngFor="let item of abc.controls; let i = index"
                                                     >
                                                       <div [formGroupName]="i">
-                                                        <div class="col-6 col-md-4">
+                                                       
                                                           <div class="ads-file">
                                                             <input
                                                               type="file"
@@ -242,12 +242,13 @@
                                                               (change)="changeListeners($event, i)"
                                                             />
                                                             <label for="File_1+{{ i }}" class="js-labelFile">
-                                                              <i class="fal fa-upload"></i>
+                                                              <i class="fa fa-upload"></i>
                                                               <p class="js-fileName">Click here to upload</p>
+                                                              <img src="assets/images/media/img_01.jpg">
                                                               <!-- <input class="input-psswd form-control" name="vehiclePictures" multiple formControlName="imgName" type="file" placeholder=""> -->
                                                             </label>
                                                           </div>
-                                                        </div>
+                                                        
                                                       </div>
                                                     </ng-container>
                                                     <!-- <div class="d-flex">
@@ -256,7 +257,7 @@
                                                                     </div> -->
                                                   </div>
                                                   <div class="single-form">
-                                                    <label
+                                                    <label class="add-vehicle"
                                                       >RC Images (x3) (For Verification)
                                                       <button
                                                         class="btn btn-secondary"
@@ -271,8 +272,8 @@
                                                       *ngFor="let item of def.controls; let i = index"
                                                     >
                                                       <div [formGroupName]="i">
-                                                        <div class="row">
-                                                          <div class="col-6 col-md-4">
+                                                        
+                                                         
                                                             <div class="ads-file">
                                                               <input
                                                                 type="file"
@@ -281,13 +282,14 @@
                                                                 (change)="changeListenersRc($event, i)"
                                                               />
                                                               <label for="File_1+{{ i }}" class="js-labelFile">
-                                                                <i class="fal fa-upload"></i>
+                                                                <i class="fa fa-upload"></i>
                                                                 <p class="js-fileName">Click here to upload</p>
+                                                                <img src="assets/images/media/img_01.jpg">
                                                                 <!-- <input class="input-psswd form-control" name="carPvehiclePicturesictures" multiple formControlName="imgName" type="file" placeholder=""> -->
                                                               </label>
                                                             </div>
-                                                          </div>
-                                                        </div>
+                                                          
+                                                        
                                                       </div>
                                                     </ng-container>
                                                     <!-- <div class="d-flex">

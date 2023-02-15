@@ -370,7 +370,7 @@
         padding: 0;
     }
     .navbar-collapse .logo {
-        margin-bottom: 8vh;
+        margin-bottom: 1vh;
     }
     .navbar .dropdown-toggle::after {
         right: 0;
