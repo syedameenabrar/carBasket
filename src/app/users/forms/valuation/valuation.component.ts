@@ -8,17 +8,22 @@ import {
 } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { ObservableService } from 'src/app/services/observable.service';
+// declare function loaderA():any;
 
 @Component({
   selector: 'app-valuation',
   templateUrl: './valuation.component.html',
   styleUrls: ['./valuation.component.css']
 })
+
+
 export class ValuationComponent implements OnInit {
 
   postAddForm: FormGroup = new FormGroup({});
 
   image: any;
+  isLoading = false;
+
   imageRc: any;
   showBrands:any[]=[];
   showModels:any[]=[];
@@ -28,10 +33,12 @@ export class ValuationComponent implements OnInit {
   selectedModel:any="";
   selectedType:any="";
   showPrice:any="";
+  homeSltCategory:any="";
   beforeSubmit:boolean=true;
-  showLoader:boolean= false;
+  hideFields:boolean=true;
 
 
+    categories = ['Bike', 'Car', 'Tractor', 'JCB', 'Goods_Vehicle', 'Agriculture_Vehicle']
    bikesBrands = ['Yamaha', 'Royal_Enfield', "Suzuki", "Mahendra", 'TVS', 'Bajaj','Honda', 'Hero'];
    carsBrands = ['Ford', 'Nissan', 'Volkswagen','Chevrolet', 'Toyota','Honda', 'Hyundai', 'Mahindra', 'Tata',  'Renault', 'Ambassador', 'Mercedes', 'BMW', 'Datsun', 'Land_Rover', 'Bajaj','Maruti', 'Skoda', 'Fiat', 'Mitsubishi', 'Opel' ];
    tractorsBrand = ['Mahindra','Swaraj', 'Massey_Ferguson', 'Sonalika', 'Powertrac', 'Eicher', 'John_Deere', 'Farmtrac', 'New_Holland', 'Kubota', 'Solis', 'Preet', 'VST', 'Indo Farm', 'Captain', 'ACE', 'Digitrac', 'Force', 'Trakstar', 'Hindustan', 'Kartar', 'Same Deutz Fahr', 'Escorts'  ]
@@ -80,9 +87,22 @@ export class ValuationComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder, private api:ApiService, private fetch:ObservableService) { 
+   
+    this.fetch.getDataSubject.subscribe((res: any) => {
+        console.log("in single page", res );
+  
+        this.homeSltCategory = res;
+        this.categorySelectedHome(res);
+        // this.postAddForm.controls['vehicleType'] = res;
+        // console.log('====================================');
+        // console.log(this.postAddForm.controls['vehicleType']);
+        // console.log('====================================');
+    
+        });
+
     this.postAddForm = this.fb.group({
         email: ['', [Validators.required]],
-        vehicleType: ['', [Validators.required]],
+        vehicleType: [this.homeSltCategory, [Validators.required]],
       description: [''],
       condition: ['', [Validators.required]],
       location: ['', [Validators.required]],
@@ -96,10 +116,12 @@ export class ValuationComponent implements OnInit {
       rcPictures: this.fb.array([this.secondImage()]),
     });
 
-    this.fetch.getDataSubject.subscribe((res: any) => {
-      console.log("in single page", res );
+    
+  }
+
   
-      });
+  ngOnInit(): void {
+    
   }
 
   get f() {
@@ -148,8 +170,6 @@ export class ValuationComponent implements OnInit {
     this.abc.removeAt(i);
   }
 
-  ngOnInit(): void {
-  }
 
   showVehiclePrice(){
     if (this.selectedVehicle == "Car") {
@@ -1880,11 +1900,12 @@ export class ValuationComponent implements OnInit {
     if(this.selectedVehicle === "Bike"){
       // $( ".type__select.property__select" ).css( "content", "\f52f" );
       // $(abc).css( "content", "\f52f" );
-      if(this.selectedbrand != "Royal_Enfield"){
+      if(this.selectedbrand == "Royal_Enfield"){
+        this.showType = this.wheelTypeForRoyal_Enfield;
           
-this.showType = this.wheelType;
       }else{
-          this.showType = this.wheelTypeForRoyal_Enfield;
+this.showType = this.wheelType;
+
 
       }
 
@@ -1901,6 +1922,39 @@ this.showType = this.wheelType;
   typeSelected(data:any){
     this.selectedType = data.value;
   }
+  categorySelectedHome(data:any){
+    this.selectedVehicle = data;
+    this.showBrands = [];
+    this.showModels = [];
+    this.showType = [];
+    // console.log(data.value);
+    if(this.selectedVehicle == "Bike"){
+    console.log("bike is selected");
+    this.showBrands = this.bikesBrands;
+
+    }
+    else if(this.selectedVehicle == "Tractor"){
+    console.log("Tractor is selected");
+    this.showBrands = this.tractorsBrand;
+
+    }
+    else if(this.selectedVehicle == "JCB"){
+    console.log("JCB is selected");
+
+    }
+    else if(this.selectedVehicle == "Car"){
+    console.log("Car is selected");
+    this.showBrands = this.carsBrands;
+
+    }
+    else if(this.selectedVehicle == "Goods_Vehicle"){
+    console.log("Goods_Vehicle is selected");
+
+    }
+    else{
+
+    }
+  }
   categorySelected(data:any){
     this.selectedVehicle = data.value;
     this.showBrands = [];
@@ -1910,24 +1964,34 @@ this.showType = this.wheelType;
     if(data.value == "Bike"){
     console.log("bike is selected");
     this.showBrands = this.bikesBrands;
+    this.hideFields = true;
 
     }
     else if(data.value == "Tractor"){
     console.log("Tractor is selected");
     this.showBrands = this.tractorsBrand;
+    this.hideFields = false;
 
     }
     else if(data.value == "JCB"){
     console.log("JCB is selected");
+    this.hideFields = false;
 
     }
     else if(data.value == "Car"){
     console.log("Car is selected");
     this.showBrands = this.carsBrands;
+    this.hideFields = true;
 
     }
     else if(data.value == "Goods_Vehicle"){
     console.log("Goods_Vehicle is selected");
+    this.hideFields = false;
+
+    }
+    else if(data.value == "Agriculture_Vehicle"){
+    console.log("Goods_Vehicle is selected");
+    this.hideFields = false;
 
     }
     else{
@@ -1938,9 +2002,14 @@ this.showType = this.wheelType;
   
   onSubmit() {
      const data = this.postAddForm.value;
-     data.Our_Price = this.showPrice;
+    //  data.Our_Price = this.showPrice;
     console.log('data', data);
-    this.showLoader = true;
+    this.isLoading = true;
+
+    
+     
+
+
 
     this.api.postValuationForm(data).subscribe((res:any) => {
       console.log(res);
@@ -1950,18 +2019,25 @@ this.showType = this.wheelType;
       
       this.showVehiclePrice();
       
-      // window.location.reload();
       }else{
         alert("Something went wrong, try again")
       }
+      this.isLoading = false;
 
+    },
+    (err:any) => {
+        console.log("ERROR", err);
+      this.isLoading = false;
+
+        alert("Something went wrong, contact admin")
     })
 
-    this.showLoader = false;
+
 
 
 
   }
+
 
 
 }

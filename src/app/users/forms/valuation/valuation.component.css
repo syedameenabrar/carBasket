@@ -1,0 +1,37 @@
+.single-form {
+  width: 100%;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+}
+.add-vehicle {
+  margin-bottom: 15px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-vehicle button{
+    padding: 4px 32px;
+}
+.ads-file{
+    float: left;
+    width: 77px;
+    margin-left: 10px;
+}
+.ads-file input{
+    background: white;
+    border: solid 1px #e8e8e8;
+}
+.ads-file input[type=file]{
+    background-color: none;
+    opacity: 0;
+}
+.js-labelFile img{
+    width: 75px;
+}
+
+.imgNo{
+    width: 75px;
+
+}

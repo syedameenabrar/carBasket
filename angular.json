@@ -60,7 +60,7 @@
 
             ],
             "scripts": [
-              
+              "src/assets/js/loader.js"
             ]
           },
           "configurations": {

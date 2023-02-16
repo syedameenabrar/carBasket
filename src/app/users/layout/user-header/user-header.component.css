@@ -1,0 +1,8 @@
+.theme-main-menu.sticky-menu.fixed {
+    position: fixed;
+    z-index: 990;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #fff;
+    box-shadow: 0 13px 35px -12px rgba(35, 35, 35, .1)
+}

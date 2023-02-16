@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ValuationComponent } from './valuation/valuation.component';
+import { LoadingComponent } from '../common/loading';
 
 const routes: Routes = [
   {
