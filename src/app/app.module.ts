@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from './users/forms/forms.module';
 import { GetDataComponent } from './get-data/get-data.component';
+import { LoadingComponent } from './users/common/loading';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GetDataComponent } from './get-data/get-data.component';
     AboutComponent,
     ContactComponent,
     PreloaderComponent,
-    GetDataComponent
+    GetDataComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

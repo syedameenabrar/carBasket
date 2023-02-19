@@ -12,7 +12,7 @@
   <link href="assets/fonts/gordita/stylesheet.css" type="text/css" rel="stylesheet">
   <link href="assets/fonts/eustache/stylesheet.css" type="text/css" rel="stylesheet">
   <link href="assets/fonts/noteworthy/style.css" type="text/css" rel="stylesheet">
-  <link href="assets/vendor/slick/slick.css" rel="stylesheet" type="text/css" media="all">
+  <link href="../src/assets/vendor/slick/slick.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 </head>
@@ -25,7 +25,7 @@
       <!-- WOW js -->
       <script src="assets/vendor/wow/wow.min.js"></script>
       <!-- Slick Slider -->
-      <script src="assets/vendor/slick/slick.min.js"></script>
+      <script src="../src/assets/vendor/slick/slick.min.js"></script>
       <!-- Fancybox -->
       <script src="assets/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
       <!-- Lazy -->
@@ -37,33 +37,5 @@
       <!-- Theme js -->
       <script src="assets/js/theme.js"></script>
       <link href="assets/vendor/slick/slick.css" rel="stylesheet">
-      <script>
-        $(document).ready(function () {
-        $(".customer-logos").slick({
-          slidesToShow: 6,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 1500,
-          arrows: false,
-          dots: false,
-          pauseOnHover: false,
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 4
-              }
-            },
-            {
-              breakpoint: 520,
-              settings: {
-                slidesToShow: 3
-              }
-            }
-          ]
-        });
-      });
-      
-      </script>
 </body>
 </html>

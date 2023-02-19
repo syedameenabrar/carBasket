@@ -16,7 +16,7 @@
 }
 .ads-file{
     float: left;
-    width: 236px;
+    width: 77px;
     margin-left: 10px;
 }
 .ads-file input{
@@ -29,4 +29,9 @@
 }
 .js-labelFile img{
     width: 75px;
+}
+
+.imgNo{
+    width: 75px;
+
 }
