@@ -144,3 +144,7 @@
 }
 
 
+.hero-banner-seven .bg-wrapper {
+  background: url(../../../../assets/images/shape/shape_94.svg) center bottom/cover no-repeat;
+  z-index: 5;
+}
