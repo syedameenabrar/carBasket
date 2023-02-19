@@ -49,8 +49,13 @@
                                             <td>{{abc.condition}}</td>
                                             <td>{{abc.manufactureYear}}</td>
                                             <td>{{abc.description}}</td>
-                                            <td *ngFor="let klj of abc.vehiclePictures">{{klj.img}}</td>
-                                            <td *ngFor="let ghd of abc.rcPictures">{{ghd.img}}</td>
+                                            <td *ngFor="let klj of abc.vehiclePictures; let i = index">
+                                              <a [href]="klj.img"><img [src]="klj.img" alt=""></a>
+                                            </td>
+                                            <td *ngFor="let ghd of abc.rcPictures; let i = index">
+                                              <a [href]="ghd.img"><img [src]="ghd.img" alt=""></a>
+
+                                            </td>
 
                                           </tr>
                                         </tbody>

@@ -337,7 +337,7 @@
                           </ng-container>
                           <div *ngIf="postAddForm.controls['vehiclePictures']['controls'][i].value.img">
                             <img [src]="postAddForm.controls['vehiclePictures']['controls'][i].value.img" />
-                            <a href="" class="btn btn-danger m-1">Delete</a>
+                            <a  class="btn btn-danger m-1" (click)="removeSkill(i)">Delete</a>
                           </div>
                         </div>
                       </div>
@@ -380,7 +380,7 @@
                           </ng-container>
                           <div *ngIf="postAddForm.controls['rcPictures']['controls'][i].value.img">
                           <img [src]="postAddForm.controls['rcPictures']['controls'][i].value.img" />
-                          <a href="" >Delete</a>
+                          <a class="btn btn-danger m-1" (click)="removeSecondImage(i)">Delete</a>
                         </div>
                         </div>
                       </div>
@@ -393,9 +393,10 @@
                 </div>
               </div>
               <!-- /.input-bg-group -->
-              <button class="btn-one fw-500 w-100 fs-18 d-block mt-45">
+              <button type="submit" class="btn-one fw-500 w-100 fs-18 d-block mt-45">
                 Submit
               </button>
+              <!-- [disabled]="!postAddForm.valid" -->
             </form>
           </div>
           <!-- /.form-style-four -->
@@ -407,7 +408,9 @@
         <div class="col-lg-6 m-auto">
           <div class="title-style-one text-center mb-60 lg-mb-40 wow fadeInUp">
             <h2 class="main-title fw-500 tx-dark m0">
-              The valuation price of your vehicle is : {{ showPrice }}
+              The valuation price of your vehicle is : <span class="position-relative ms-3 d-inline-block"
+              >{{ showPrice }}<img src="../../../../assets/images/shape/shape_95.svg" alt=""
+            /></span>
             </h2>
           </div>
         </div>
