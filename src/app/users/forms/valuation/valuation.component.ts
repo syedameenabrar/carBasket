@@ -129,8 +129,8 @@ export class ValuationComponent implements OnInit {
   }
   newImage(): FormGroup {
     return this.fb.group({
-      img: [''],
-      imgName: [''],
+      img: ['', [Validators.required]],
+      imgName: ['', [Validators.required]],
       // fileName: [''],
       // fileNameToDisplay: ['', [Validators.required]],
       // btnUpload: [false],
@@ -140,8 +140,8 @@ export class ValuationComponent implements OnInit {
 
   secondImage(): FormGroup {
     return this.fb.group({
-      img: [''],
-      imgName: [''],
+      img: ['', [Validators.required]],
+      imgName: ['', [Validators.required]],
       // fileName: [''],
       // fileNameToDisplay: ['', [Validators.required]],
       // btnUpload: [false],

@@ -19,6 +19,35 @@
 <body>
   <app-root></app-root>
 
+  <script>
+    $(document).ready(function () {
+$(".customer-logos").slick({
+slidesToShow: 6,
+slidesToScroll: 1,
+autoplay: true,
+autoplaySpeed: 1500,
+arrows: false,
+dots: false,
+pauseOnHover: false,
+responsive: [
+  {
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 4
+    }
+  },
+  {
+    breakpoint: 520,
+    settings: {
+      slidesToShow: 3
+    }
+  }
+]
+});
+});
+
+  </script>
+
   <script src="assets/vendor/jquery.min.js"></script>
       <!-- Bootstrap JS -->
       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -37,5 +66,7 @@
       <!-- Theme js -->
       <script src="assets/js/theme.js"></script>
       <link href="assets/vendor/slick/slick.css" rel="stylesheet">
+
+      
 </body>
 </html>

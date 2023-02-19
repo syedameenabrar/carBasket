@@ -1,18 +1,17 @@
-
 #spinner {
-	-webkit-animation: frames 1s infinite linear;
-	animation: frames 1s infinite linear;
-	background: transparent;
-	border: 1.75vw solid #FFF;
-	border-radius: 100%;
-	border-top-color: #DF691A;
-	width: 20vw;
-	height: 20vw;
-	opacity: .6;
-	padding: 0;
-	position: absolute;
-	z-index: 999;
+    animation: frames 1s infinite linear;
+    background: transparent;
+    border: 5.75px solid #FFF;
+    border-radius: 100%;
+    border-top-color: #DF691A;
+    width: 4vw;
+    height: 4vw;
+    opacity: 0.6;
+    padding: 0;
+    position: absolute;
+    z-index: 999;
 }
+
 @keyframes frames {
   0% {
 	-webkit-transform: rotate(0deg);
@@ -36,4 +35,23 @@
 	bottom: 0;
 	left: 0;
 	z-index: 1000;
+}
+
+
+@media screen and (max-width: 500px) {
+
+	#spinner {
+		-webkit-animation: frames 1s infinite linear;
+		animation: frames 1s infinite linear;
+		background: transparent;
+		border: 1.75vw solid #FFF;
+		border-radius: 100%;
+		border-top-color: #DF691A;
+		width: 20vw;
+		height: 20vw;
+		opacity: .6;
+		padding: 0;
+		position: absolute;
+		z-index: 999;
+	}
 }
