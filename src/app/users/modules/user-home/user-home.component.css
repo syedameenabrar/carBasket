@@ -1,150 +1,97 @@
-
-
 @media (max-width: 767px) {
   .btn-fourteen {
     margin-bottom: 19px;
   }
 }
 
+/* Slider */
 
 /* Slider */
 
-.slick-slide {
-  margin: 0px 20px;
-}
-
-.slick-slide img {
-  width: 100%;
-}
-
-.slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-  margin-top: 30px;
-}
-
-.slick-list {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.slick-list:focus {
-  outline: none;
-}
-
-.slick-list.dragging {
-  cursor: pointer;
-  cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-}
-
-.slick-track:before,
-.slick-track:after {
-  display: table;
-  content: "";
-}
-
-.slick-track:after {
-  clear: both;
-}
-
-.slick-loading .slick-track {
-  visibility: hidden;
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-
-[dir="rtl"] .slick-slide {
-  float: right;
-}
-
-.slick-slide img {
-  display: block;
-}
-
-.slick-slide.slick-loading img {
-  display: none;
-}
-
-.slick-slide.dragging img {
-  pointer-events: none;
-}
-
-.slick-initialized .slick-slide {
-  display: block;
-}
-
-.slick-loading .slick-slide {
-  visibility: hidden;
-}
-
-.slick-vertical .slick-slide {
-  display: block;
-  height: auto;
-  border: 1px solid transparent;
-}
-
-.slick-arrow.slick-hidden {
-  display: none;
-}
-
-.card-style-eleven h4{
+.card-style-eleven h4 {
   font-family: gordita;
 }
-.card-style-eleven p{
+.card-style-eleven p {
   font-family: gordita;
 }
-.pr-table-wrapper .price{
+.pr-table-wrapper .price {
   font-family: gordita;
 }
-.top-banner{
+.top-banner {
   font-family: gordita;
 }
-.trial-text{
+.trial-text {
   font-family: gordita;
 }
-.main-title{
+.main-title {
   font-family: gordita;
 }
-.sc-title{
+.sc-title {
   font-family: gordita;
 }
-
 
 .hero-banner-seven .bg-wrapper {
-  background: url(../../../../assets/images/shape/shape_94.svg) center bottom/cover no-repeat;
+  background: url(../../../../assets/images/shape/shape_94.svg) center
+    bottom/cover no-repeat;
   z-index: 5;
+}
+
+section.customer-logos.slider {
+  display: flex;
+}
+
+/*for Demo Only*/
+/* Slider */
+
+.wrappers {
+  display: flex;
+  overflow: hidden;
+
+  padding: 2.5rem;
+}
+.item {
+  animation: animate 25s alternate linear infinite;
+
+  max-width: 400px;
+  min-width: 250px;
+}
+.item img {
+  width: 100%;
+  padding: 20px;
+}
+.container:hover .item {
+  animation-play-state: paused;
+}
+@keyframes animate {
+  0% {
+    transform: translate3d(1300px, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1300px, 0, 0);
+  }
+}
+@media (max-width: 767px) {
+  .slider-area h2 {
+    font-size: 30px;
+  }
+  .wrappers {
+    width: 95%;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+.illustration-holder-mob{
+  display: none;
+}
+@media (min-width: 320px) and (max-width: 991px) {
+  .illustration-holder{
+    display: none;
+  }
+  .illustration-holder-mob{
+    display: block;
+    margin-bottom: 20px;
+  }
+  .hero-banner-seven .hero-heading{
+    font-size: 59px;
+  }
 }

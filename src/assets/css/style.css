@@ -11,16 +11,16 @@
 @import url(../../assets/fonts/gordita/stylesheet.css);
 @import url(../../assets/fonts/eustache/stylesheet.css);
 @import url(../../assets/fonts/noteworthy/style.css);
-@import url(../../assets/vendor/bootstrap/css/bootstrap.min.css);
+@import url(../vendor/bootstrap/css/bootstrap.min.css);
 @import url(../../assets/css/navbar.css);
 @import url(../../assets/css/framework.css);
 @import url(../../assets/fonts/bootstrap-icons/font-css.css);
 @import url(../../assets/fonts/font-awesome/css/all.min.css);
-@import url(../../assets/vendor/fancybox/dist/jquery.fancybox.min.css);
-@import url(../../assets/vendor/slick/slick.css);
-@import url(../../assets/vendor/wow/animate.css);
+@import url(../vendor/fancybox/dist/jquery.fancybox.min.css);
+@import url(../vendor/slick/slick.css);
+@import url(../vendor/wow/animate.css);
 @import url(../../assets/css/custom-animation.css);
-@import url(../../assets/vendor/nice-select/nice-select.css);
+@import url(../vendor/nice-select/nice-select.css);
 #contact-form .form-group .help-block ul,
 .style-none {
   margin-bottom: 0;
